@@ -1,0 +1,77 @@
+body{
+    background:url('https://images.unsplash.com/photo-1521062034775-0116a839cf19?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=865b97f1c893dc372572bed1c628fab1&auto=format&fit=crop&w=749&q=80');
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+*{
+    margin:0;
+    border:0;
+    padding:0;
+    box-sizing: border-box;
+}
+header{margin:96px auto;}
+.search-container{width: 475px;display: block;margin: 0 8px;}
+.search h2{color:#8a8a8a;margin-bottom: 10px;margin-top: 10px;}
+.search input#formField{
+    width: 328px;
+    height: 45px;
+    padding: 0 10px;
+    font-size:20px;
+ }
+.search input#formField:hover{
+   background:#fff
+    
+}
+.search form > [type="submit"]{
+    width:130px;
+    height:45px;
+    background: #D77F7E;
+    font-size:20px;
+    color:#fff;
+}
+header .weather-box{
+    background-color: rgba(0,0,0,.7);
+    width:480px;
+    height:400px;
+    margin:auto;
+    border:4px solid #0099cc
+
+}
+.weather-box > h1 {
+    font-size:20px;
+    color:#FEFEFE; 
+    font-weight:100;
+    padding-top:15px;
+    padding-left: 20px;
+}
+
+.weather-box h1 > span {
+    color:#FEFEFE; 
+    font-size: 60px;
+    display: block;
+    padding-bottom:10px;
+    text-shadow: 1px 1px #000;
+    border-bottom: 1px solid #fff;
+    width:430px;
+}
+
+header .weather-box .correct-city{display: inline-flex;color:#fff}
+header .weather-box img{width:100px;height:100px;margin:20px;}
+header .weather-box .correct-city h2{margin-top: 10px;font-size:60px;}
+header .weather-box .correct-city span{font-size:15px;display: table;}
+header .weather-box .forecast{margin:10px;margin-left:20px;}
+header .weather-box .forecast h2,header .weather-box .humidity h2{font-size:13px;color:#0099cc;}
+header .weather-box .forecast span,header .weather-box .humidity span{margin-top:10px;font-size:18px;}
+header .weather-box .humidity{margin:10px;}
+header .footer{
+    text-align: right;
+    color:#fff;
+    padding:5px;
+    background: #0099cc;
+    width:480px;
+    margin:0 auto
+}
+input[type=submit][disabled] {
+    background-color: rgba(255,255,255,.5);
+    color: rgba(255,255,255,.35);
+    cursor: default;
+}

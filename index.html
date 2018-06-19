@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   <link href="css/style.css" rel="stylesheet">
+    <title>Weather</title>
+</head>
+    <body>
+        <header>
+            <div class="weather-box">
+                <div class="search">
+                    <form class="search-container" id="search">
+                        <h2>Weather by city</h2>
+                        <input type="text" id="formField" placeholder="Enter city name" onkeydown="onWrite()"><!--
+                        --><input id="searchButton" type="submit" value="Update" disabled />
+                    </form>
+                </div>
+                    <h1>Weather conditions in <span id="nowCity"></span></h1>
+                    <div class="correct-city">
+                        <img id="conditionImg">
+                        
+                        <div class="main">
+                            <h2 id="temp"></h2>
+                            <span id="skyCondition"></span>
+                        </div>
+                        
+                        <div class="forecast">
+                            <h2>Forecast</h2>
+                            <span id="maxTemp"></span>
+                            <span id="minTemp"></span>
+                        </div>
+                        
+                        <div class="humidity">
+                            <h2>Humdity</h2>
+                            <span id="humidity"></span>
+                            <h2>Wind speed</h2>
+                            <span id="speed"></span>
+                        </div>
+                    </div>
+            </div>
+                <div class="footer">
+                    <i class="fa fa-calendar-times-o" aria-hidden="true" style="text-align:right;margin:3px"></i>
+                     <time id="time"></time>
+                </div>
+        </header>
+            <script src="js/javascript.js" defer></script>
+    </body>
+</html>
