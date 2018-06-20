@@ -8,6 +8,7 @@ var weatherIcons = {
     "shower rain": linkIcons + 'yT6myJ7.png',
     "thunderstorm": linkIcons + 'HtTlDq4.png',
     "snow": linkIcons + 'TwZjsQQ.png',
+    "overcast clouds": linkIcons + '3OQgyFF.png',
     "mist": linkIcons + 'OILOHrX.png'
 };
 var conditionImg = document.getElementById('conditionImg'),
