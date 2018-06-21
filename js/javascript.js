@@ -14,10 +14,11 @@ var weatherIcons = {
 var conditionImg = document.getElementById('conditionImg'),
     timeOfDay = document.querySelector('time'),
     skycon = document.getElementById("skyCondition"),
+    wrong = document.getElementById("wrong-msg"),
     button = document.getElementById("searchButton"),
-    searchfield = document.getElementById('formField');
+    searchField = document.getElementById('formField');
    
-var nameofcity = "Taif";
+var nameofcity = "riyadh";
 
 
 function updateDt() {
@@ -53,6 +54,7 @@ function updateDt() {
 
     timeOfDay.innerHTML = d + ', ' + n + ' ' + dNum + " " + h + ':' + m + ' ' + dayOrNight;
 }
+setInterval(updateDt, 1000);
 updateDt();
 function city() {
     "use strict";
@@ -68,10 +70,17 @@ function city() {
             document.getElementById("maxTemp").innerHTML = req.main.temp_max + "° Max";
             document.getElementById("minTemp").innerHTML = req.main.temp_min + "° Min";
             document.getElementById("humidity").innerHTML = req.main.humidity + " Max";
-            document.getElementById("speed").innerHTML = req.wind.speed + " m/s";
+            document.getElementById("speed").innerHTML = Math.round(req.wind.speed) + " m/s";
             skycon.innerHTML = req.weather[0].description;
             conditionImg.src = weatherIcons[skycon.innerHTML];
             conditionImg.alt = skycon.innerHTML;
+            wrong.innerHTML = '';
+            wrong.classList.remove('wrongMsg');
+        } else if (this.status === 404) {
+            wrong.classList.add('wrongMsg');
+            wrong.innerHTML = 'Oups! city not found , Please try again';
+        } else {
+            wrong.classList.remove('wrongMsg');
         }
     };
     xml.open("GET", url, true);
@@ -79,17 +88,16 @@ function city() {
 }
 city();
 
-
 document.getElementById("search").addEventListener("submit", function (e) {
     "use strict";
     e.preventDefault();
-    nameofcity = searchfield.value;
+    nameofcity = searchField.value;
     city();
 });
 function onWrite() {
     "use strict";
-    var input = searchfield.value;
-    if (input.trim() !== "") {
+    var input = searchField.value;
+    if (input.length > 1) {
         button.disabled = false;
     } else {
         button.disabled = true;
